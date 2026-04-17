@@ -1,14 +1,14 @@
-# Use Java 17 (stable image)
-FROM eclipse-temurin:17-jdk
+# Use Maven + Java 17 image
+FROM maven:3.9.9-eclipse-temurin-17
 
 # Set working directory
 WORKDIR /app
 
-# Copy all files
+# Copy project files
 COPY . .
 
 # Build jar
-RUN ./mvnw clean package -DskipTests
+RUN mvn clean package -DskipTests
 
 # Expose port
 EXPOSE 8080
