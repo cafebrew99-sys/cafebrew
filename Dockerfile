@@ -1,25 +1,17 @@
-# Use Java 17 base image
-FROM openjdk:17-jdk-slim
+# Use Java 17 (stable image)
+FROM eclipse-temurin:17-jdk
 
 # Set working directory
 WORKDIR /app
 
-# Copy Maven wrapper & pom.xml
-COPY mvnw .
-COPY .mvn .mvn
-COPY pom.xml .
+# Copy all files
+COPY . .
 
-# Download dependencies (faster build)
-RUN ./mvnw dependency:go-offline -B
-
-# Copy source code
-COPY src src
-
-# Build the application
+# Build jar
 RUN ./mvnw clean package -DskipTests
 
-# Expose port (Render uses 8080 by default)
+# Expose port
 EXPOSE 8080
 
-# Run the jar file
+# Run app
 CMD ["java", "-jar", "target/cafebrew-0.0.1-SNAPSHOT.jar"]
