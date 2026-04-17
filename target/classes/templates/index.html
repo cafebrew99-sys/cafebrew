@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cafebrew - A Premium Cafe Experience</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body class="mesh-bg-1">
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg glass-nav fixed-top">
+        <div class="container py-1">
+            <a class="navbar-brand fw-bold fs-3 text-white" href="/">
+                <i class="bi bi-cup-hot-fill text-accent me-2"></i> Cafe<span class="text-accent">Brew</span>
+            </a>
+            <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent">
+                <i class="bi bi-list text-white fs-1"></i>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarContent">
+                <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+                    <li class="nav-item"><a class="nav-link active px-3" href="/">Home</a></li>
+                    <li class="nav-item"><a class="nav-link px-3" href="/menu">Menu</a></li>
+                </ul>
+                <div class="d-flex" id="authSection">
+                    <!-- Injected by JS -->
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section d-flex align-items-center">
+        <div class="container text-center text-white hero-content">
+            <h1 class="display-2 fw-bold mb-4 drop-shadow" style="max-width: 800px; margin: 0 auto;">Artisan Sips, <br><span class="text-accent">Celestial Bites.</span></h1>
+            <p class="lead mb-5 drop-shadow fs-4 mx-auto" style="max-width: 600px; opacity: 0.9;">A symphony of handcrafted brews and gourmet delights designed to elevate your everyday ritual.</p>
+            <a href="/menu" class="btn btn-accent btn-lg px-5 py-3 rounded-pill fs-5 glow-on-hover">Discover Our Menu</a>
+        </div>
+    </section>
+
+    <!-- Categories Section -->
+    <section class="py-5">
+        <div class="container py-5">
+            <div class="text-center mb-5 text-white">
+                <h2 class="display-4 fw-bold">Curated <span class="text-accent">Selections</span></h2>
+                <div class="mt-2 mx-auto bg-accent" style="height: 3px; width: 60px; border-radius: 2px;"></div>
+                <p class="text-muted mt-3 fs-5">Crafted with passion, served with excellence.</p>
+            </div>
+            
+            <div class="row g-4 justify-content-center">
+                <!-- Coffee/Hot Drinks Card -->
+                <div class="col-md-3">
+                    <div class="glass-card card-3d text-center p-4 h-100">
+                        <div class="card-icon-container">
+                            <i class="bi bi-cup-hot-fill fs-1 text-accent"></i>
+                        </div>
+                        <h3 class="text-white h4">Artisan Brews</h3>
+                        <p class="text-muted small">From velvet espressos to aromatic chai, every sip is a masterpiece.</p>
+                    </div>
+                </div>
+                <!-- Food/Fast Food Card -->
+                <div class="col-md-3">
+                    <div class="glass-card card-3d text-center p-4 h-100">
+                        <div class="card-icon-container">
+                            <i class="bi bi-fast-forward-fill fs-1 text-accent"></i>
+                        </div>
+                        <h3 class="text-white h4">Gourmet Fast Food</h3>
+                        <p class="text-muted small">Decadent burgers, artisan pizzas, and golden fries crafted for flavor.</p>
+                    </div>
+                </div>
+                <!-- Snacks/Puffs Card -->
+                <div class="col-md-3">
+                    <div class="glass-card card-3d text-center p-4 h-100">
+                        <div class="card-icon-container">
+                            <i class="bi bi-egg-fried fs-1 text-accent"></i>
+                        </div>
+                        <h3 class="text-white h4">Savoury Snacks</h3>
+                        <p class="text-muted small">Flaky puffs and artisanal toasts perfect for a mid-day indulgence.</p>
+                    </div>
+                </div>
+                <!-- Desserts Card -->
+                <div class="col-md-3">
+                    <div class="glass-card card-3d text-center p-4 h-100">
+                        <div class="card-icon-container">
+                            <i class="bi bi-cake2-fill fs-1 text-accent"></i>
+                        </div>
+                        <h3 class="text-white h4">Heavenly Desserts</h3>
+                        <p class="text-muted small">Sweet symphonies of chocolate and cream to complete your journey.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script th:src="@{/js/main.js}"></script>
+</body>
+</html>
